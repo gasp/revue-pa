@@ -1,0 +1,13 @@
+config/
+ecrire/
+IMG/
+local/
+plugins-dist/
+prive/
+squelettes-dist/
+tmp/
+*.txt
+*.php
+*.png
+rien.gif
+
