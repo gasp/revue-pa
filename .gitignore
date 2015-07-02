@@ -3,6 +3,7 @@ ecrire/
 IMG/
 local/
 plugins-dist/
+plugins/
 prive/
 squelettes-dist/
 tmp/
@@ -10,4 +11,3 @@ tmp/
 *.php
 *.png
 rien.gif
-
