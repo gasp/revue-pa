@@ -11,3 +11,6 @@ tmp/
 *.php
 *.png
 rien.gif
+node_modules/
+squelettes/libs/
+bower_components/

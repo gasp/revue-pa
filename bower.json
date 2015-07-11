@@ -1,0 +1,26 @@
+{
+  "name": "revuepa",
+  "version": "0.1.0",
+  "authors": [
+    "gaspard <gaspard@gmail.com>"
+  ],
+  "description": "revue pa",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "bandwith",
+    "tester"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.x.x"
+  }
+}

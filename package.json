@@ -1,0 +1,18 @@
+{
+  "name": "revuepa",
+  "version": "0.1.0",
+  "description": "a website",
+  "main": "squelettes/structure.html",
+  "scripts": {
+    "build": "npm install && gulp install",
+    "start": "gulp watch",
+    "test": "gulp test"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-bower": "0.0.6"
+  },
+  "keywords": [
+  ],
+  "license": "MIT"
+}
