@@ -1,4 +1,5 @@
-config/
+config/*
+!config/mes_options.php
 ecrire/
 IMG/
 local/
@@ -8,7 +9,7 @@ prive/
 squelettes-dist/
 tmp/
 *.txt
-*.php
+/*.php
 *.png
 rien.gif
 node_modules/

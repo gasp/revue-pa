@@ -13,5 +13,5 @@ define('_DEBUG_AUTORISER', true);
 define('_DEBUG_SLOW_QUERIES', true);
 define('_BOUCLE_PROFILER', 5000);
 
-$GLOBALS['z_blocs']=array('head','head_js','nav','content','aside','cron','footer');
+$GLOBALS['z_blocs']=array('content','head','head_js','nav','aside','cron','footer');
 define('_URLS_PROPRES_MIN',1);

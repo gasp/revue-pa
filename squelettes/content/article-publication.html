@@ -1,0 +1,69 @@
+<BOUCLE_contenu_article(ARTICLES){id_article}>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-3">
+      <ol class="breadcrumb">
+        <li><a href="#URL_SITE_SPIP/"><:accueil_site:></a></li>
+        <BOUCLE_ariane(HIERARCHIE){id_article}>
+          <li><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></li>
+        </BOUCLE_ariane>
+        [<li class="active">(#TITRE|couper{80})</li>]
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 col-md-offset-3">
+      <h2 style="font-family: georgia; font-size:36px; color: #222; margin: 2em 0;">
+        #TITRE
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <p style="text-align:right; color:#999">
+        [Publié le (#DATE|affdate)]<br>par
+        <BOUCLE_lesauteurs(AUTEURS){id_article}{'et'}>
+          #NOM
+        </BOUCLE_lesauteurs>
+      </p>
+    </div>
+    <div class="col-md-9">
+
+      <div class="" style="font-family: georgia; font-size:22px; line-height: 33px; color: #222">
+        #CHAPO
+      </div>
+      <br>
+      <div class="" style="font-family: georgia; font-size:22px; line-height: 33px; color: #444">
+        #TEXTE
+      </div>
+    </div>
+    <div class="col-md-3">
+      <b>Articles liés par auteurs</b>
+      <ul>
+        <BOUCLE_auteurs(AUTEURS){id_article}>
+          <BOUCLE_articles_auteurs(ARTICLES){id_auteur}{unique}{!par date}{0,3}{id_secteur=2}>
+            <li><a href="#URL_ARTICLE" title="Autre article lié par #_auteurs:NOM">#TITRE</a></li>
+          </BOUCLE_articles_auteurs>
+        </BOUCLE_auteurs>
+      </ul>
+      <hr>
+
+      <b>Articles liés par mots clés</b>
+      <ul>
+        <BOUCLE_taxons(MOTS){id_article}{id_groupe=4}>
+          <BOUCLE_articles_taxons(ARTICLES){id_mot}{unique}{!par date}{0,3}{id_secteur=2}>
+            <li><a href="#URL_ARTICLE" title="Autre article lié par #_taxons:TITRE">#TITRE</a></li>
+          </BOUCLE_articles_taxons>
+        </BOUCLE_taxons>
+      </ul>
+
+      <b>Articles du même numéro</b>
+      <ul>
+        <BOUCLE_numero(ARTICLES){id_rubrique}{par num titre}>
+          <li class="#EXPOSE{active}"><a href="#URL_ARTICLE">#TITRE</a></li>
+        </BOUCLE_numero>
+      </ul>
+    </div>
+  </div>
+</div>
+</BOUCLE_contenu_article>
