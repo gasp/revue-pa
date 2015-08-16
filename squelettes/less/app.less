@@ -3,6 +3,13 @@
 @import "../../bower_components/bootstrap/less/mixins.less";
 @import "locals.less"; // local variables
 
+.grayLink() {
+  color: @gray-light;
+  &:hover {
+    color: @gray;
+  }
+}
+
 .titraille {
   h1 {
     color: #222;
@@ -20,10 +27,7 @@
     text-align:right;
     color:#999;
     a {
-      color: @gray-light;
-      &:hover {
-        color: @gray;
-      }
+      .grayLink();
     }
   }
   .chapo, .texte {
@@ -39,7 +43,19 @@
   }
 }
 
+section.numero {
+
+  /*ul,li {
+    padding:0;
+    margin:0;
+    list-style-type: none;
+  }*/
+}
+
+
+
 .footer {
+  margin: 1em 0;
   border: 1px solid #eeeeee;
   background-color: #f8f8f8;
   footer, .related{
