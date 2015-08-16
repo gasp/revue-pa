@@ -1,16 +1,5 @@
 <BOUCLE_contenu_article(ARTICLES){id_article}{unique}{doublons related}>
 <div class="container">
-  <div class="row">
-    <div class="col-md-9 col-md-offset-3">
-      <ol class="breadcrumb">
-        <li><a href="#URL_SITE_SPIP/"><:accueil_site:></a></li>
-        <BOUCLE_ariane(HIERARCHIE){id_article}>
-          <li><a href="#URL_RUBRIQUE">[(#TITRE|couper{50})]</a></li>
-        </BOUCLE_ariane>
-        [<li class="active">(#TITRE|couper{50})</li>]
-      </ol>
-    </div>
-  </div>
   <div class="row titraille">
     <div class="col-md-9 col-md-offset-3">
       <h2 style="font-family: georgia; font-size:36px; color: #222; margin: 2em 0;">
