@@ -1,0 +1,43 @@
+<hr>
+<div class="container">
+  <div class="row related">
+    <div class="col-md-8">
+      <h4>&Agrave; lire aussi</h4>
+      <ul>
+        <BOUCLE_taxons(MOTS){id_article}{id_groupe=4}>
+          <BOUCLE_articles_taxons(ARTICLES){id_mot}{doublons related}{!par date}{0,3}{id_secteur=2}>
+            <li>
+              <a href="#URL_ARTICLE" title="Autre article lié par #_taxons:TITRE">#TITRE</a>
+              <B_numero_article_taxons>
+                /
+              <BOUCLE_numero_article_taxons(RUBRIQUES){id_rubrique}>
+                #TITRE
+              </BOUCLE_numero_article_taxons>
+            </li>
+          </BOUCLE_articles_taxons>
+        </BOUCLE_taxons>
+        <BOUCLE_article_numero(ARTICLES){id_rubrique}{doublons related}{par num titre}{0,3}>
+          <li>
+            <a href="#URL_ARTICLE">#TITRE</a> /
+            <BOUCLE_numero_article_numero(RUBRIQUES){id_rubrique}>
+              #TITRE
+            </BOUCLE_numero_article_numero>
+          </li>
+        </BOUCLE_article_numero>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h4>Commander l'article</h4>
+      <ul>
+        <li>acheter cet article #ID_ARTICLE</li>
+        <li>acheter le numéro #ID_RUBRIQUE</li>
+        <li>s'abonner à la revue</li>
+      </ul>
+    </div>
+  </div><!-- /.row -->
+
+
+  <footer>
+    <p>[&copy; #NOM_SITE_SPIP &ndash; (#DATE|annee)]</p>
+  </footer>
+</div> <!-- /container -->
