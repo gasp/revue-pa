@@ -4,11 +4,13 @@
 <BOUCLE_principale(RUBRIQUES) {id_rubrique}>
 composition: numero
 <div class="container">
-  <div class="row">
+  <div class="row titraille">
     <div class="col-md-12">
       <h1 class="#EDIT{titre} surlignable">
         #TITRE
-        [<small>(#DESCRIPTIF)</small>]
+        [<div>
+          <small>(#DESCRIPTIF)</small>
+        </div>]
       </h1>
 
       [<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,*})</div>]
