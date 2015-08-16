@@ -10,7 +10,7 @@ squelettes-dist/
 tmp/
 *.txt
 /*.php
-*.png
+/*.png
 rien.gif
 node_modules/
 squelettes/libs/
