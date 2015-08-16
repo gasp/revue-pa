@@ -2,4 +2,6 @@
         <nom>publication</nom>
         <description>Cette composition liste les publications</description>
         <icon>images/compo-icono.png</icon>
+        <branche type="rubrique" composition="numero" />
+        <branche type="article" composition="publication" />
 </composition>
