@@ -1,40 +1,49 @@
-<!--
-  composition: numero
--->
 <BOUCLE_principale(RUBRIQUES) {id_rubrique}>
-composition: numero
 <div class="container">
   <div class="row titraille">
-    <div class="col-md-12">
+    <div class="col-md-9 col-md-offset-3">
       <h1 class="#EDIT{titre} surlignable">
         #TITRE
-        [<div>
-          <small>(#DESCRIPTIF)</small>
+        [<div class="small">
+          (#DESCRIPTIF)
         </div>]
       </h1>
-
-      [<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,*})</div>]
+      [<div class="lead #EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,*})</div>]
     </div>
   </div>
-  [(#REM) Articles de la rubrique ]
+
   <B_articles>
     #ANCRE_PAGINATION
-    <div class="row">
-      <div class="col-md-12">
-        <BOUCLE_articles(ARTICLES) {id_rubrique} {!par num titre} {pagination}>
-
+    <BOUCLE_articles(ARTICLES) {id_rubrique} {!par num titre} {pagination}>
+      <div class="row">
+        <div class="col-md-9 col-md-offset-3">
           <h3><a href="#URL_ARTICLE">#TITRE</a></h3>
-          [<div><:par_auteur:> (#LESAUTEURS)</div>]
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 meta">
+          <B_lesauteurs>
+            Par
+          <BOUCLE_lesauteurs(AUTEURS){id_article}{'<br>et'}>
+            <a href="#URL_AUTEUR">#NOM</a>
+          </BOUCLE_lesauteurs>
+        </div>
+        <div class="col-md-9">
           <div class="">
             #INTRODUCTION
           </div>
+          <div class="">
+            <a href="#" class="btn btn-default">Commander</a>
+          </div>
+          <!--
           <BOUCLE_mots(MOTS){id_groupe=4}{id_article}>
             <a href="#URL_MOT" class="label label-default">#TITRE</a>
           </BOUCLE_mots>
-        </BOUCLE_articles>
+          -->
+        </div>
       </div>
-      [<p class="pagination">(#PAGINATION)</p>]
-    </div>
+    </BOUCLE_articles>
+    [<p class="pagination">(#PAGINATION)</p>]
   </B_articles>
 
 </div><!-- /container -->
