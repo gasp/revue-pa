@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row titraille">
     <div class="col-md-9 col-md-offset-3">
-      <h1>
+      <h1 class="#EDIT{titre} surlignable">
         #TITRE
       </h1>
     </div>
@@ -10,7 +10,7 @@
   <div class="row corpus">
     <div class="col-md-3 meta">
       <p>
-        [Publié le (#DATE|affdate)]<br>
+        [Publié en (#DATE|saison)][ (#DATE|annee)]<br>
         <B_lesauteurs>
         <a href="#auteurs">par
         <BOUCLE_lesauteurs(AUTEURS){id_article}{'et'}>
