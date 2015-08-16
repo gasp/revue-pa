@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var bower = require('gulp-bower');
+var less = require('gulp-less');
 
 gulp.task('bower', function() {
   return bower()
@@ -9,15 +10,13 @@ gulp.task('bower', function() {
 });
 
 gulp.task('install', ['bower', 'dist'], function() {
-  gulp.src("./bower_components/network-js/dist/network.min.js")
-    .pipe(gulp.dest("./public/dist"));
-  gulp.src("./bower_components/network-js/server/server.php")
-    .pipe(gulp.dest("./public/dist"));
+
 });
 
-gulp.task('dist', function() {
-  gulp.src("./src/*.js")
-    .pipe(gulp.dest("./public/dist"));
+gulp.task('less', function () {
+  return gulp.src('./squelettes/less/app.less')
+    .pipe(less())
+    .pipe(gulp.dest('./squelettes/css/'));
 });
 
 gulp.task('default', ['dist'], function() {
