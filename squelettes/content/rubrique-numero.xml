@@ -1,0 +1,5 @@
+<composition>
+        <nom>numero</nom>
+        <description>Cette composition est spécifique pour un numéro</description>
+        <icon>images/compo-icono.png</icon>
+</composition>
