@@ -15,7 +15,13 @@
     <BOUCLE_numero(RUBRIQUES) {tous} {id_parent} {par num titre}{!par date}>
       <div class="col-md-3">
         <h2 href="#URL_RUBRIQUE">
-          <a href="#URL_RUBRIQUE">#TITRE</a>
+          <BOUCLE_empty_numero(ARTICLES){id_rubrique}>
+          </BOUCLE_empty_numero>
+            <a href="#URL_RUBRIQUE">#TITRE</a>
+          </B_empty_numero>
+            <span class="gray">#TITRE</span>
+          <//B_empty_numero>
+
           [<div class="small">
             (#DESCRIPTIF|supprimer_tags)
           </div>]
