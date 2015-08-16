@@ -2,15 +2,15 @@
 <div class="container">
   <div class="row titraille">
     <div class="col-md-9 col-md-offset-3">
-      <h2 style="font-family: georgia; font-size:36px; color: #222; margin: 2em 0;">
+      <h1>
         #TITRE
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="row corpus">
-    <div class="col-md-3">
-      <p style="text-align:right; color:#999">
         [Publié le (#DATE|affdate)]<br>par
+    <div class="col-md-3 meta">
+      <p>
         <BOUCLE_lesauteurs(AUTEURS){id_article}{'et'}>
           #NOM
         </BOUCLE_lesauteurs>
@@ -18,18 +18,18 @@
     </div>
     <div class="col-md-9">
 
-      [<div class="" style="font-family: georgia; font-size:22px; line-height: 33px; color: #222">
+      [<div class="chapo">
         (#CHAPO)
       </div>
       <br>]
-      <div class="" style="font-family: georgia; font-size:22px; line-height: 33px; color: #444">
+      <div class="texte">
         #TEXTE
       </div>
     </div>
   </div>
 
   <BOUCLE_auteurs_bio(AUTEURS){id_article}>
-  <div class="row auteur-name">
+  <div class="row auteur-name" id="auteurs">
     <div class="col-md-7 col-md-offset-3">
       <h3>#NOM</h3>
     </div>
