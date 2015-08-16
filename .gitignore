@@ -15,4 +15,4 @@ rien.gif
 node_modules/
 squelettes/libs/
 bower_components/
-squelettes/css/
+squelettes/css/*

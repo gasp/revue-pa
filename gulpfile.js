@@ -14,7 +14,7 @@ gulp.task('install', ['bower', 'dist'], function() {
 });
 
 gulp.task('less', function () {
-  return gulp.src('./squelettes/less/app.less')
+  return gulp.src(['./squelettes/less/app.less', './squelettes/less/bootstrap.less'])
     .pipe(less())
     .pipe(gulp.dest('./squelettes/css/'));
 });
