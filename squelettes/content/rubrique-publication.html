@@ -1,0 +1,60 @@
+<!--
+  composition: publication
+-->
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+
+composition: publication
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="#EDIT{titre} surlignable">[
+        (#LOGO_RUBRIQUE|image_reduire{40,*})
+        ]#TITRE
+      </h1>
+
+      [<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,*})</div>]
+    </div>
+  </div>
+
+  <B_numero>
+
+  <BOUCLE_numero(RUBRIQUES) {id_parent} {par num titre}{!par date}>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="thumbnail">
+          #LOGO_RUBRIQUE
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="caption">
+          <h3 href="#URL_RUBRIQUE">
+            <a href="#URL_RUBRIQUE">#TITRE</a>
+            [<small>(#DESCRIPTIF)</small>]
+          </h3>
+          <B_articles_numero>
+          <ul>
+            <BOUCLE_articles_numero(ARTICLES) {id_rubrique} {!par num titre} {0,10}>
+              <li>
+                #TITRE
+                <B_articles_numero_auteurs>
+                &ndash;
+                <BOUCLE_articles_numero_auteurs(AUTEURS){id_article}{","}>
+                  #NOM
+                </BOUCLE_articles_numero_auteurs>
+              </li>
+            </BOUCLE_articles_numero>
+          </ul>
+          </B_articles_numero>
+            Numéro à paraître.
+          <//B_articles_numero>
+
+        </div>
+      </div>
+    </div>
+  </BOUCLE_numero>
+</B_numero>
+
+</div><!-- /container -->
+
+</BOUCLE_principale>
