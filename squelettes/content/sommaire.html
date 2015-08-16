@@ -1,23 +1,46 @@
 <div class="jumbotron">
   <div class="container">
-    <h1>Bienvenue</h1>
-    <p>#DESCRIPTIF_SITE_SPIP</p>
+    <p class="lead">#DESCRIPTIF_SITE_SPIP</p>
+    <a href="#URL_RUBRIQUE{8}" class="btn btn-primary btn-lg">S'abonner</a>
   </div>
 </div>
 
-<div class="container">
-  <B_articles>
-	#ANCRE_PAGINATION
-	<div class="row">
-		<BOUCLE_articles(ARTICLES) {!par date} {pagination} {0,3}>
-		<div class="col-md-4 hentry">
-			[(#LOGO_ARTICLE_RUBRIQUE{#URL_ARTICLE}|image_reduire{40,*})]
-			<h2 class="h2 entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
-			<div><abbr class="published"[ title="(#DATE|date_iso)"]>[(#DATE|affdate_jourcourt)]</abbr>[, <:par_auteur:> (#LESAUTEURS|supprimer_tags)]</div>
-			[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION{250})</div>]
-		</div>
-		</BOUCLE_articles>
-	</div>
-	[<p class="pagination">(#PAGINATION|{precedent_suivant})</p>]
-</div><!--/container-->
-</B_articles>
+<!--{!par date}-->
+<BOUCLE_latest(RUBRIQUES){id_parent=2}{id_rubrique=12}{0,1}>
+<section class="latest">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <a href="#URL_RIBRIQUE">
+            #LOGO_RUBRIQUE
+          </a>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <h2>
+          <a href="#URL_RUBRIQUE">
+            #TITRE
+          </a>
+          [<div class="small">
+            (#DESCRIPTIF|supprimer_tags)
+          </div>]
+        </h2>
+
+        <ul>
+          <BOUCLE_latest_articles(ARTICLES){par num titre}{id_rubrique}>
+            <li>
+              <a href="#URL_ARTICLE">#TITRE</a>
+              &ndash;
+              <BOUCLE_latest_auteurs(AUTEURS){id_article}{'et'}>
+                #NOM
+              </BOUCLE_latest_auteurs>
+            </li>
+          </BOUCLE_latest_articles>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+</BOUCLE_latest>
