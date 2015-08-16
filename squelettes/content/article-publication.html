@@ -8,12 +8,15 @@
     </div>
   </div>
   <div class="row corpus">
-        [Publié le (#DATE|affdate)]<br>par
     <div class="col-md-3 meta">
       <p>
+        [Publié le (#DATE|affdate)]<br>
+        <B_lesauteurs>
+        <a href="#auteurs">par
         <BOUCLE_lesauteurs(AUTEURS){id_article}{'et'}>
           #NOM
         </BOUCLE_lesauteurs>
+        </a>
       </p>
     </div>
     <div class="col-md-9">
