@@ -1,5 +1,35 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h4>&Agrave; propos</h4>
+      <ul>
+        <BOUCLE_apropos(ARTICLES){id_secteur=16}>
+        <li>
+            <a class="#EXPOSE{active}" href="#URL_ARTICLE">
+              #TITRE
+            </a>
+        </li>
+        </BOUCLE_apropos>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <h4>Boutique</h4>
+      <ul>
+        <li>abonnement numérique</li>
+        <li>abonnement papier</li>
+        <li>commander un numéro</li>
+        <li>commander un article</li>
+        <BOUCLE_abo(ARTICLES){id_secteur=8}>
+          <li>
+            <a href="#URL_ARTICLE">
+              #TITRE
+            </a>
+          </li>
+        </BOUCLE_abo>
+      </ul>
+    </div>
+  </div>
   <footer>
-    <p>[&copy; #NOM_SITE_SPIP &ndash; (#DATE|annee)]</p>
+    <INCLURE{fond=inclure/copy}>
   </footer>
 </div> <!-- /container -->
