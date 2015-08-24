@@ -22,5 +22,5 @@ gulp.task('less', function () {
 });
 
 gulp.task('default', ['less'], function() {
-  gulp.watch(files_less, ['less']);
+  gulp.watch('./squelettes/less/*.less', ['less']);
 });
