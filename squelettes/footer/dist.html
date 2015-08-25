@@ -3,7 +3,7 @@
     <div class="col-md-3">
       <h4>&Agrave; propos</h4>
       <ul>
-        <BOUCLE_apropos(ARTICLES){id_secteur=16}>
+        <BOUCLE_apropos(ARTICLES){id_rubrique=16}>
         <li>
             <a class="#EXPOSE{active}" href="#URL_ARTICLE">
               #TITRE
@@ -13,19 +13,11 @@
       </ul>
     </div>
     <div class="col-md-3">
-      <h4>Boutique</h4>
       <ul>
-        <li>abonnement numérique</li>
-        <li>abonnement papier</li>
-        <li>commander un numéro</li>
-        <li>commander un article</li>
-        <BOUCLE_abo(ARTICLES){id_secteur=8}>
-          <li>
-            <a href="#URL_ARTICLE">
-              #TITRE
-            </a>
-          </li>
-        </BOUCLE_abo>
+        <li><a href="#URL_RUBRIQUE{9}">Abonnez-vous</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Adhérer à l'@RPA</a></li>
+        <li><a href="#">Soumettre un article</a></li>
       </ul>
     </div>
   </div>
