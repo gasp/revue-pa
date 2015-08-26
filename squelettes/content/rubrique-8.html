@@ -1,0 +1,39 @@
+[(#REM)
+specifique pour la boutique
+n'affiche que les articles qui ont un nom_site avec paypal
+]
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+
+<div class="container">
+  <div class="row titraille">
+    <div class="col-md-9 col-md-offset-3">
+      <h1 class="#EDIT{titre} surlignable">
+        #TITRE
+        [<div class="small">
+          (#DESCRIPTIF|supprimer_tags)
+        </div>]
+      </h1>
+      [<div class="lead #EDIT{texte} texte surlignable">(#TEXTE)</div>]
+    </div>
+  </div>
+  [(#REM) Articles de la rubrique ]
+  <B_articles>
+    <BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}>
+      <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+          <h3>[<a href="(#TITRE|paypal_url{Abonnement de,#NOM_SITE})">#TITRE</a>]</h3>
+          <div>
+            #CHAPO
+          </div>
+          <div class="">
+            [(#TITRE|paypal_url{Abonnement de,#NOM_SITE})]
+          </div>
+        </div>
+      </div>
+    </BOUCLE_articles>
+
+  </B_articles>
+
+</div><!-- /container -->
+
+</BOUCLE_principale>

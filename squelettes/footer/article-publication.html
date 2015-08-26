@@ -27,11 +27,13 @@
       </ul>
     </div>
     <div class="col-md-4">
-      <h4>Commander l'article</h4>
+      <h4>Boutique</h4>
       <ul>
-        <li>acheter cet article #ID_ARTICLE</li>
-        <li>acheter le numéro #ID_RUBRIQUE</li>
-        <li>s'abonner à la revue</li>
+        [<li><a href="(#TITRE|paypal_url{Article en PDF,5})">Commander cet article</a></li>]
+        <BOUCLE_numero(RUBRIQUES){id_rubrique}>
+        [<li><a href="(#TITRE|paypal_url{Revue en PDF,15})">Commander ce numéro</a></li>]
+        </BOUCLE_numero>
+        <li><a href="#URL_RUBRIQUE{9}">S'abonner à la revue</a></li>
       </ul>
     </div>
   </div><!-- /.row -->
