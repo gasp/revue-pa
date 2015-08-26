@@ -1,0 +1,53 @@
+<BOUCLE_contenu_mots(MOTS){id_mot}{id_groupe=4}{doublons}>
+<div class="container">
+  <div class="row titraille">
+    <div class="col-md-9 col-md-offset-3 simplex">
+      <h1>
+        <div class="small">
+          Thème:
+        </div>
+        #TITRE
+      </h1>
+      [<div class="texte">
+        (#TEXTE)
+      </div>]
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 col-md-offset-3 simplex">
+      <B_articles>
+      <h2>Articles sur ce thème.</h2>
+      <BOUCLE_articles(ARTICLES){id_mot}>
+      <article class="h-entry">
+        <h3 class="p-name">
+          <a href="#URL_ARTICLE">#TITRE</a>
+        </h3>
+        <div class="gray">
+          Publié par [(#LESAUTEURS|strip_tags)]
+          <BOUCLE_numero(RUBRIQUES){id_rubrique}{0,1}>
+            pour l'édition <a href="#URL_RUBRIQUE">#TITRE </a>
+          </BOUCLE_numero>
+        </div>
+
+        <p class="p-summary">#INTRODUCTION</p>
+      </article>
+      </BOUCLE_articles>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 col-md-offset-3 simplex">
+      <B_themes>
+      <h2>Thèmes connexes.</h2>
+      <ul>
+      <BOUCLE_themes(MOTS){id_groupe}{doublons}>
+        <BOUCLE_articles_communs(ARTICLES){doublons communs}{id_mot}{id_mot=#_contenu_mots:ID_MOT}>
+        </BOUCLE_articles_communs>
+          <li><a href="#_themes:URL_MOT">#_themes:TITRE</a></li>
+        </B_articles_communs>
+      </BOUCLE_themes>
+      </ul>
+      </B_themes>
+    </div>
+  </div>
+</div>
+</BOUCLE_contenu_mots>
