@@ -1,0 +1,75 @@
+<BOUCLE_contenu_article(ARTICLES){id_article}{unique}{doublons related}>
+[(#REM)
+auteur:bio est mis en chapeau
+article:chapo est mis en chapo
+article:texte est mis en texte
+
+]
+
+<div class="container">
+  <div class="row titraille">
+    <div class="col-md-9 col-md-offset-3">
+      <h1 class="#EDIT{titre} surlignable">
+        #TITRE
+      </h1>
+    </div>
+  </div>
+
+  [<div class="row article">
+    <div class="col-md-9 col-md-offset-3">
+      <div class="lead">
+        (#CHAPO)
+      </div>
+    </div>
+  </div>]
+
+
+  <BOUCLE_auteur_bio(AUTEURS){id_article}{0,1}{nom_site=='bio'}>
+  <div class="row auteur">
+    <div class="col-md-1 thumbnail col-md-offset-2">
+      [(#LOGO_AUTEUR|image_recadre{200,200}|sinon{'<img src="http://lorempixel.com/200/200/">'})]
+    </div>
+    <div class="col-md-7 simplex">
+      <div class="bio chapo">
+        #BIO
+      </div>
+    </div>
+  </div><!-- /.row auteur -->
+</BOUCLE_auteur_bio>
+
+[(#REM) suite du contenu, l'article]
+  <div class="row article">
+    <div class="col-md-9 col-md-offset-3">
+      <div class="texte">
+        #TEXTE
+      </div>
+    </div>
+  </div>
+  [(#REM) liens]
+  <BOUCLE_auteur_articles(AUTEURS){id_article}{0,1}{nom_site=='bio'}>
+    <INCLURE{fond=inclure/_auteur_articles,env}{id_auteur}>
+  </BOUCLE_auteur_articles>
+
+
+[(#REM) contact]
+<BOUCLE_auteur_contact(AUTEURS){id_article}{0,1}{nom_site=='bio'}>
+[<div class="row article">
+  <div class="col-md-9 col-md-offset-3">
+    <h3>Contact</h3>
+    <div>E-mail: (#EMAIL)</div>
+    #FORMULAIRE_ECRIRE_AUTEUR
+  </div>
+</div>]
+</BOUCLE_auteur_contact>
+
+</div>
+</BOUCLE_contenu_article>
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+window.addEventListener('titraille', function () {
+  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  particlesJS.load('container', '/particules.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+});
+</script>

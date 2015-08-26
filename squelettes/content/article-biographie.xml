@@ -1,0 +1,5 @@
+<composition>
+        <nom>biographie</nom>
+        <description>Cette composition est spécialement conçue pour un article de biographie. Pensez à spécifier l'auteur comme auteur de la biographie.</description>
+        <icon>images/compo-icono.png</icon>
+</composition>

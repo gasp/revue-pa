@@ -31,6 +31,12 @@
     </div>
   </div>
 
+  <B_auteurs_bio>
+    <div class="row">
+      <div class="col-md-7 col-md-offset-3">
+        <hr>
+      </div>
+    </div>
   <BOUCLE_auteurs_bio(AUTEURS){id_article}>
   <div class="row auteur-name" id="auteurs">
     <div class="col-md-7 col-md-offset-3">
@@ -45,6 +51,11 @@
       <div class="bio">
         #BIO
       </div>
+      <BOUCLE_auteur_biographie(AUTEURS){id_auteur}{nom_site=='bio'}>
+        <div class="fullbio">
+          <a href="#URL_SITE">Biographie complète</a>
+        </div>
+      </BOUCLE_auteur_biographie>
 
       <B_articles_auteurs>
         <h4>Autres articles du même auteur :</h4>

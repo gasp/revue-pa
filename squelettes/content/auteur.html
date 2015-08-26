@@ -1,0 +1,22 @@
+<BOUCLE_contenu_auteur(AUTEURS){id_auteur}>
+<div class="container">
+  <div class="row titraille">
+    <div class="col-md-9 col-md-offset-3">
+      <h1 class="#EDIT{titre} surlignable">
+        #NOM
+      </h1>
+    </div>
+  </div>
+  <div class="row auteur">
+    <div class="col-md-1 thumbnail col-md-offset-2">
+      [(#LOGO_AUTEUR|image_recadre{200,200}|sinon{'<img src="http://lorempixel.com/200/200/">'})]
+    </div>
+    <div class="col-md-7 simplex">
+      <div class="bio chapo">
+        #BIO
+      </div>
+    </div>
+  </div><!-- /.row auteur -->
+  <INCLURE{fond=inclure/_auteur_articles,env}{id_auteur}>
+</div>
+</BOUCLE_contenu_auteur>
