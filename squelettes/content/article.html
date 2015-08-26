@@ -1,20 +1,21 @@
 <BOUCLE_contenu_article(ARTICLES){id_article}>
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <p>
-        #LESAUTEURS
-      </p>
-      <p>
-        #DATE
-      </p>
-      <p class="arbo">
-        <a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_article}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]
-      </p>
-    </div>
-    <div class="col-md-9">
+
+    <div class="col-md-9 col-md-offset-3 simplex">
       <h2>#TITRE</h2>
-      #TEXTE
+      [<div class="chapo">
+        (#CHAPO)
+      </div>]
+      <div class="texte">
+        #TEXTE
+      </div>
+      <p>
+        Publié[ par (#LESAUTEURS)][ le (#DATE|affdate)] dans
+        <span class="arbo">
+          <BOUCLE_ariane(HIERARCHIE){id_article}><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>
+        </span>
+      </p>
     </div>
   </div>
 </div>

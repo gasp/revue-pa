@@ -21,13 +21,15 @@ nav {
 }
 body.sommaire .jumbotron {
   margin-top: -1.5em;
-  background-position: bottom left;
-  background-image: url(../images/dreamcatcher.png);
+  background-position: 0 -320px;
+  background-image: url(../images/dreamcatcher5.png);
   background-repeat: no-repeat;
-  background-size: 400px;
-  transition: .5s;
+  background-size: 1000px;
+  transition: 10.5s;
   &:hover {
-    background-size: 1000px;
+    // background-size: 400px;
+    // background-position: 0 bottom;
+    background-image: url(../images/dreamcatcher10.png);
   }
 }
 
@@ -52,17 +54,25 @@ body.sommaire .jumbotron {
   }
 }
 
+.chapo {
+   color: #222
+}
+.texte {
+  color: #444
+}
+
+.simplex {
+  .chapo {
+    font-family: @font-family-serif;
+    font-size: @font-size-base * 1.2 ;
+  }
+}
+
 .corpus {
   .chapo, .texte {
-    font-family: georgia;
-    font-size:22px;
+    font-family: @font-family-serif;
+    font-size: 22px;
     line-height: 33px;
-  }
-  .chapo {
-     color: #222
-  }
-  .texte {
-    color: #444
   }
 }
 
@@ -89,10 +99,16 @@ body.sommaire .jumbotron {
 
 
 .footer {
-  margin: 1em 0 0 0;
+  margin: 2em 0 0 0;
+  padding: 2em 0 0 0;
   border: 1px solid #eeeeee;
   background-color: #f8f8f8;
   // background-image: url(../images/absurdidad.png);
+  ul, li {
+    display: block;
+    padding: 0;
+    margin: auto;
+  }
   footer, .related{
     padding: 1em 0;
   }
