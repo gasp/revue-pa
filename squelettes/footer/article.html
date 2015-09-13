@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h4>&Agrave; propos</h4>
+      <ul>
+        <BOUCLE_apropos(ARTICLES){id_rubrique=16}>
+        <li>
+            <a class="#EXPOSE{active}" href="#URL_ARTICLE">
+              #TITRE
+            </a>
+        </li>
+        </BOUCLE_apropos>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <h4>Participez</h4>
+      <ul>
+        <li><a href="#URL_ARTICLE{4}">Contactez-nous</a></li>
+        <li><a href="#URL_ARTICLE{28}">Adhérez à l'@RPA</a></li>
+        <li><a href="mailto:redaction@revue-pa.com">Soumettez un article</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="#URL_RUBRIQUE{9}">Abonnez-vous</a></li>
+        <BOUCLE_dernier_numero(RUBRIQUES){id_parent=2}{!par num titre}{0,1}>
+        [<li><a href="(#TITRE|paypal_url{Revue en PDF,15})">Commander le dernier numéro</a></li>]
+        </BOUCLE_dernier_numero>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <footer>
+    <INCLURE{fond=inclure/copy}>
+  </footer>
+</div> <!-- /container -->
