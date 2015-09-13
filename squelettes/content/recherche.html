@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row titraille">
+    <div class="col-md-9 col-md-offset-3 simplex">
+      <h1>
+        <div class="small">
+          Résultats de recherche de
+        </div>
+         "#RECHERCHE"
+      </h1>
+      [<div class="texte">
+        (#TEXTE)
+      </div>]
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9 col-md-offset-3 simplex">
+      <p>
+        Effectuer une autre recherche
+      </p>
+      <form class="" action="/" method="get">
+        <input type="hidden" name="page" value="recherche">
+        <input type="text" name="recherche" value="#RECHERCHE">
+        <input type="submit" name="name" value="Rechercher">
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1 simplex">
+
+      <B_mots>
+      <div class="menu menu_mots">
+        #ANCRE_PAGINATION
+        <h3>Résultats parmi les mots clés (#GRAND_TOTAL)</h3>
+        <ul class="spip">
+          <BOUCLE_mots(MOTS) {id_groupe=4} {recherche} {!par points} {pagination}>
+          <li>
+            <a href="#URL_MOT">#TITRE</a>
+            <B_articles_mots>
+              &ndash; articles liés :
+              <ul>
+                <BOUCLE_articles_mots(ARTICLES){id_mot}>
+                  <li><a href="#URL_ARTICLE">#TITRE</a></li>
+                </BOUCLE_articles_mots>
+              </ul>
+            </B_articles_mots>
+          </li>
+        </BOUCLE_mots>
+        </ul>
+        [<p class="pagination">(#PAGINATION)</p>]
+      </div>
+      </B_mots>
+
+      <B_articles>
+      <div class="menu menu_articles">
+        #ANCRE_PAGINATION
+        <h2>Résultats parmi les publications (#GRAND_TOTAL)</h2>
+        <ul class="spip">
+          <BOUCLE_articles(ARTICLES) {id_secteur=2} {recherche} {!par points} {pagination}>
+          <li>
+            <a href="#URL_ARTICLE">#TITRE</a> &ndash;
+            [par (#LESAUTEURS|supprimer_tags)]
+          </li>
+          </BOUCLE_articles>
+        </ul>
+        [<p class="pagination">(#PAGINATION)</p>]
+      </div>
+      </B_articles>
+
+      <hr>
+      <p class="gray">
+        Le reste du site n'est pas indexé, à activer ici, donc.
+      </p>
+
+    </div>
+
+    <div class="col-md-3 simplex">
+      <B_auteurs>
+      <div class="menu menu_auteurs">
+        #ANCRE_PAGINATION
+        <h3>Résultats parmi les auteurs (#GRAND_TOTAL)</h3>
+        <ul class="spip">
+          <BOUCLE_auteurs(AUTEURS) {recherche} {!par points} {pagination}>
+          <li>
+            <a href="#URL_ARTICLE">#NOM</a>
+          </li>
+        </BOUCLE_auteurs>
+        </ul>
+        [<p class="pagination">(#PAGINATION)</p>]
+      </div>
+      </B_auteurs>
+
+    </div>
+  </div>
+
+
+</div> <!-- /container -->

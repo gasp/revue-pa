@@ -15,6 +15,14 @@
           <li class="#EXPOSE{active}"><a href="#URL_RUBRIQUE">#TITRE</a></li>
         </BOUCLE_navigation>
       </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <input name="page" value="recherche" type="hidden">
+        <div class="form-group">
+          <input type="text" id="recherche" name="recherche" class="form-control"
+            placeholder="<:recherche:>"[ value="(#RECHERCHE)"]>
+        </div>
+        <button type="submit" class="hidden">Submit</button>
+      </form>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
