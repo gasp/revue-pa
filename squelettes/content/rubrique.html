@@ -15,7 +15,7 @@
   [(#REM) Articles de la rubrique ]
   <B_articles>
     #ANCRE_PAGINATION
-    <BOUCLE_articles(ARTICLES) {id_rubrique} {!par date} {pagination}>
+    <BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre} {pagination}>
       <div class="row">
         <div class="col-md-9 col-md-offset-3">
           <h3><a href="#URL_ARTICLE">[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{40,*}) ]#TITRE</a></h3>
