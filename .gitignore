@@ -8,7 +8,7 @@ plugins/
 prive/
 squelettes-dist/
 tmp/
-*.txt
+/*.txt
 /*.php
 /*.png
 rien.gif
