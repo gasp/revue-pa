@@ -5,8 +5,8 @@
   </div>
 </div>
 
-<!--{!par date}-->
-<BOUCLE_latest(RUBRIQUES){id_parent=2}{id_rubrique=12}{0,1}>
+<!--!par date et par mot clé "afficher sur la home page"-->
+<BOUCLE_latest(RUBRIQUES){id_parent=2}{id_mot=2}{!par date}{0,1}>
 <section class="latest">
   <div class="container">
     <div class="row">
@@ -28,7 +28,7 @@
         </h2>
 
         <ul>
-          <BOUCLE_latest_articles(ARTICLES){par num titre}{id_rubrique}>
+          <BOUCLE_latest_articles(ARTICLES){par num titre}{id_rubrique}{doublons derniers}>
             <li>
               <a href="#URL_ARTICLE">#TITRE</a>
               &ndash;
@@ -44,3 +44,30 @@
   </div>
 </section>
 </BOUCLE_latest>
+
+<B_une>
+<section class="une">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-1">
+        <BOUCLE_une(ARTICLES){id_mot=2}{!par date}{0,3}>
+        [<h2>(#TITRE)</h2>]
+        <div class="texte">
+          #TEXTE
+        </div>
+        </BOUCLE_une>
+      </div>
+      <div class="col-md-5">
+        <h3>Derniers articles</h3>
+        <ul>
+        <BOUCLE_derniers(ARTICLES){id_secteur=2}{doublons derniers}{!par date}{0,10}>
+          <li>
+            <a href="#URL_ARTICLE">#TITRE</a>
+          </li>
+        </BOUCLE_derniers>
+        </ul>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+</B_une>
