@@ -18,18 +18,15 @@ nav {
   background-image: url(../images/dreamcatcher5.png);
   background-position: 0 -269px;
   background-repeat: no-repeat;
-  .form-group:before {
-    content:'';
-    display: block;
-    width: 14px;
-    height: 14px;
-    background-image: url(http://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png);
-    background-position: -48px 0;
-    position: absolute;
-    top:8px;
-    left:8px;
-    opacity: .5;
-    z-index: 1000;
+  position: relative;
+  .form-control#recherche {
+    background-image: url(../images/icon-search_50.png);
+    background-position: 12px 10px;
+    background-repeat: no-repeat;
+    padding-left: 34px;
+    &:focus {
+      background-image: url(../images/icon-search.png);
+    }
   }
 }
 body.sommaire .jumbotron {
@@ -38,11 +35,11 @@ body.sommaire .jumbotron {
   background-image: url(../images/dreamcatcher5.png);
   background-repeat: no-repeat;
   background-size: 1000px;
-  transition: 10.5s;
+  //transition: background 25s ease-in-out;;
   &:hover {
     // background-size: 400px;
     // background-position: 0 bottom;
-    background-image: url(../images/dreamcatcher10.png);
+    // background-image: url(../images/dreamcatcher10.png);
   }
 }
 
