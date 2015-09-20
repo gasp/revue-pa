@@ -1,3 +1,6 @@
+[(#REM)
+  rubrique classique avec des chapo qui envoient à des articles
+]
 <BOUCLE_principale(RUBRIQUES) {id_rubrique}>
 
 <div class="container">
@@ -22,8 +25,11 @@
           <!--
             <div>[(#DATE|affdate_jourcourt)][, <:par_auteur:> (#LESAUTEURS|supprimer_tags)]</div>
           -->
-          <div class="">
+          <div class="chapo">
             #CHAPO
+            <p>
+              <a href="#URL_ARTICLE" title="Lire la suite de l'article[ (#TITRE|attribut_html)]">Lire la suite &raquo;</a>
+            </p>
           </div>
         </div>
       </div>
