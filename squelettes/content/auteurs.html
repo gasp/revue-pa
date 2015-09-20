@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row titraille">
+    <div class="col-md-9 col-md-offset-3">
+      <h1 class="#EDIT{titre} surlignable">
+        Liste des auteurs
+      </h1>
+    </div>
+  </div>
+  <div class="row auteurs">
+    <div class="col-md-9 col-md-offset-3 simplex">
+      [(#REM) par défaut:
+      - tous les statuts d'auteur
+      - seulement les auteurs qui ont publié au moins une fois]
+      <BOUCLE_auteurs(AUTEURS){par nom}>
+        [(#REM) ne garder que ceux qui ont publié dans publications]
+        <BOUCLE_publie(ARTICLES){id_auteur}{id_secteur=2}{0,1}>
+          <li><a href="#URL_AUTEUR">#_auteurs:NOM</a></li>
+        </BOUCLE_publie>
+      </BOUCLE_auteurs>
+    </div>
+  </div><!-- /.row auteur -->
+  <INCLURE{fond=inclure/_auteur_articles,env}{id_auteur}>
+</div>
