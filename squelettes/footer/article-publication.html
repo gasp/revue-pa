@@ -29,7 +29,8 @@
     <div class="col-md-4">
       <h4>Boutique</h4>
       <ul>
-        <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{!id_mot=7}{0,1}>
+        [(#REM) mot7, mot60 ne peut etre vendu]
+        <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{!id_mot IN(7, 60)}{0,1}>
         #SET{prix, #DESCRIPTIF}
         [<li><a href="(#_footer_article:TITRE|paypal_url{Article #ID_ARTICLE en PDF, #GET{prix}|supprimer_tags|trim})"
           title="Commander avec Paypal">Commander cet article #TITRE</a></li>]
