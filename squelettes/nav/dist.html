@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <BOUCLE_navigation(RUBRIQUES){racine}{id_rubrique IN 2, 16}>
+        <BOUCLE_navigation(RUBRIQUES){id_mot=1}{par num titre}{0,5}>
           <li class="#EXPOSE{active}"><a href="#URL_RUBRIQUE">#TITRE</a></li>
         </BOUCLE_navigation>
       </ul>
