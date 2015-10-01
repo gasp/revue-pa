@@ -14,7 +14,7 @@
       <p class="gray">
         Publié[ par (#LESAUTEURS)][ le (#DATE|affdate)] dans
         <span class="arbo">
-          <BOUCLE_ariane(HIERARCHIE){id_article}><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>
+          <BOUCLE_ariane(HIERARCHIE){id_article}{id_rubrique !=1}><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>
         </span>
       </p>
     </div>
