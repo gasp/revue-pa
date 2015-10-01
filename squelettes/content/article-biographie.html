@@ -26,7 +26,7 @@ article:texte est mis en texte
 
   <BOUCLE_auteur_bio(AUTEURS){id_article}{0,1}{nom_site=='bio'}>
   <div class="row auteur">
-    <div class="col-md-1 thumbnail col-md-offset-2">
+    <div class="col-md-1 thumbnail col-md-offset-2 authumb">
       [(#LOGO_AUTEUR|image_recadre{200,200}|sinon{'<img src="/squelettes/images/profile.png">'})]
     </div>
     <div class="col-md-7 simplex">
