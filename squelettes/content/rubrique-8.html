@@ -17,22 +17,32 @@ n'affiche que les articles qui ont un nom_site avec paypal
     </div>
   </div>
   [(#REM) Articles de la rubrique ]
-  <B_articles>
-    <BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}>
-      <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-          <h3>[<a href="(#TITRE|paypal_url{Abonnement de,#NOM_SITE})">#TITRE</a>]</h3>
-          <div>
-            #CHAPO
-          </div>
-          <div class="hidden">
-            [(#TITRE|paypal_url{Abonnement de,#NOM_SITE})]
-          </div>
-        </div>
-      </div>
-    </BOUCLE_articles>
+    <div class="row">
+      <div class="col-md-9 col-md-offset-3">
+        <BOUCLE_numeros(RUBRIQUES){id_parent=2}{par titre}>
+        #TITRE
+          <B_articles>
+            <ul>
+              <BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}>
+              <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{!id_mot IN(7, 60)}{0,1}>
+                #SET{prix, #DESCRIPTIF}
+                [<li>
+                  <b>#_articles:TITRE</b>
+                    [ &ndash; (#_articles:LESAUTEURS|supprimer_tags)]
+                    <div class="">
+                      <a href="(#_articles:TITRE|paypal_url{Article #ID_ARTICLE en PDF, #GET{prix}|supprimer_tags|trim})"
+                      title="Commander avec Paypal">Commander cet article #TITRE</a>
+                    </div>
 
-  </B_articles>
+                </li>]
+                </BOUCLE_prix>
+              </BOUCLE_articles>
+            </ul>
+          </B_articles>
+        </BOUCLE_numeros>
+      </div>
+    </div>
+
 
 </div><!-- /container -->
 
