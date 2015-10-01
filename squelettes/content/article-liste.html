@@ -23,22 +23,23 @@ n'affiche que les articles qui ont un nom_site avec paypal
         <BOUCLE_numeros(RUBRIQUES){id_parent=2}{par titre}>
         <h2>#TITRE</h2>
           <B_articles>
-            <ul>
+            <table class="table table-striped">
               <BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}>
               <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{!id_mot IN(7, 60)}{0,1}>
                 #SET{prix, #DESCRIPTIF}
-                [<li>
-                  <b>#_articles:TITRE</b>
-                    [ &ndash; (#_articles:LESAUTEURS|supprimer_tags)]
-                    <div class="">
-                      <a href="(#_articles:TITRE|paypal_url{Article #ID_ARTICLE en PDF, #GET{prix}|supprimer_tags|trim})"
-                      title="Commander avec Paypal">Commander cet article #TITRE</a>
-                    </div>
+                [<tr>
+                  <td><a href="#_articles:URL_ARTICLE">#_articles:TITRE</a>
+                    [ &ndash;&nbsp;(#_articles:LESAUTEURS|trim|supprimer_tags)]
+                  </td>
+                  <td style="width:120px">
+                    <a href="(#_articles:TITRE|paypal_url{Article #ID_ARTICLE en PDF, #GET{prix}|supprimer_tags|trim})"
+                    title="Commander avec Paypal">Commander #TITRE</a>
+                  </td>
 
-                </li>]
+                </tr>]
                 </BOUCLE_prix>
               </BOUCLE_articles>
-            </ul>
+            </table>
           </B_articles>
         </BOUCLE_numeros>
       </div>
