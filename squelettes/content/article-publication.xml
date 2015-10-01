@@ -1,5 +1,5 @@
 <composition>
         <nom>publication</nom>
         <description>Cette composition est spécialement conçue pour un article de publication, elle a un lien vers paypal, des articles liés par auteurs, mots clés, etc.</description>
-        <icon>images/compo-icono.png</icon>
+        <icon>images/compo-publi.png</icon>
 </composition>
