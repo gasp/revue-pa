@@ -4,7 +4,10 @@ var gulp = require('gulp');
 var bower = require('gulp-bower');
 var less = require('gulp-less');
 
-var files_less = ['./squelettes/less/app.less', './squelettes/less/bootstrap.less'];
+var files_less = [
+  './squelettes/less/app.less',
+  './squelettes/less/bootstrap.less'
+];
 
 gulp.task('bower', function() {
   return bower()
