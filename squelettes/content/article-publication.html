@@ -60,7 +60,7 @@
       <B_articles_auteurs>
         <h4>Autres articles du même auteur :</h4>
         <ul>
-          <BOUCLE_articles_auteurs(ARTICLES){id_auteur}{unique}{!par date}{0,3}{id_secteur=2}>
+          <BOUCLE_articles_auteurs(ARTICLES){id_auteur}{unique}{!par date}{0,3}{id_secteur=2}{!id_mot=7}>
           <li>
             <a href="#URL_ARTICLE" title="Autre article lié par #_auteurs:NOM">#TITRE</a>
             <B_numero_articles_auteurs>
@@ -89,12 +89,3 @@
 
 </div>
 </BOUCLE_contenu_article>
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" charset="utf-8"></script>
-<script type="text/javascript">
-window.addEventListener('titraille', function () {
-  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-  particlesJS.load('container', '/particules.json', function() {
-    console.log('callback - particles.js config loaded');
-  });
-});
-</script>
