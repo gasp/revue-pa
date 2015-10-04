@@ -34,6 +34,12 @@
   <B_auteurs_bio>
     <div class="row">
       <div class="col-md-7 col-md-offset-3">
+        [(#REM) mot7, mot60, mot148 ne peut etre vendu]
+        <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{!id_mot IN(7, 60, 148)}{0,1}>
+        #SET{prix, #DESCRIPTIF}
+        [<p><a href="(#_contenu_article:TITRE|paypal_url{Article #ID_ARTICLE en PDF, #GET{prix}|supprimer_tags|trim})"
+          title="Commander avec Paypal" class="btn btn-default">Commander l'article</a></p>]
+        </BOUCLE_prix>
         <hr>
       </div>
     </div>
