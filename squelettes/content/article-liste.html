@@ -25,7 +25,8 @@ n'affiche que les articles qui ont un nom_site avec paypal
           <B_articles>
             <table class="table table-striped">
               <BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}>
-              <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{!id_mot IN(7, 60)}{0,1}>
+              [(#REM) mot7, mot60, mot148 ne peut etre vendu]
+              <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{!id_mot IN(7, 60, 148)}{0,1}>
                 #SET{prix, #DESCRIPTIF}
                 [<tr>
                   <td><a href="#_articles:URL_ARTICLE">#_articles:TITRE</a>
