@@ -12,7 +12,7 @@
   <B_numero>
   <section class="numero">
   <div class="row">
-    <BOUCLE_numero(RUBRIQUES) {tous} {id_parent} {par num titre}{!par date}>
+    <BOUCLE_numero(RUBRIQUES) {id_parent} {par num titre}{!par date}>
       <div class="col-md-3">
         <h2 href="#URL_RUBRIQUE">
           <BOUCLE_empty_numero(ARTICLES){id_rubrique}>
@@ -36,11 +36,11 @@
         </div>
         <div class="caption">
           <B_articles_numero>
-          <BOUCLE_articles_numero(ARTICLES) {id_rubrique} {!par num titre} {0,10}>
+          <BOUCLE_articles_numero(MOTS) {id_rubrique} {id_mot=3} {0,1}>
           </BOUCLE_articles_numero>
-            [<a href="(#TITRE|paypal_url{Version PDF, 15})" class="btn btn-default">Commander le numéro</a>]
-          </B_articles_numero>
             Numéro à paraître.
+          </B_articles_numero>
+            [<a href="(#_numero:TITRE|paypal_url{Version PDF, 15})" class="btn btn-default">Commander le numéro</a>]
           <//B_articles_numero>
         </div>
       </div>
