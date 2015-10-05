@@ -1,4 +1,4 @@
-<BOUCLE_auteur(AUTEURS){id_auteur}{nom_site=='bio'}>[(#HTTP_HEADER{Location: #URL_SITE})]</BOUCLE_auteur>
+<BOUCLE_auteur(AUTEURS){id_auteur}{nom_site=='bio'}>[(#HTTP_HEADER{Location: /#URL_SITE})]</BOUCLE_auteur>
 <BOUCLE_principale_auteur(AUTEURS){id_auteur}>
 <INCLURE{fond=structure,env,type-page=auteur,composition=#COMPOSITION} />
 </BOUCLE_principale_auteur>
