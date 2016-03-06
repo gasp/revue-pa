@@ -97,5 +97,31 @@
   </div><!-- /.row -->
 </B_mots>
 
+
+  <div class="row">
+    <div class="col-md-7 col-md-offset-3">
+      <h3>Discussion</h3>
+      <BOUCLE_firstcom(FORUMS){id_article}{0,1}>
+      <div style="height: 50px; border:1px solid pink">
+        texte en dégradé progressif
+        [(#TEXTE|strip_tags)]
+      </div>
+      </BOUCLE_firstcom>
+
+      <BOUCLE_discussion(FORUMS){id_article}>
+      </BOUCLE_discussion>
+        <a href="/spip.php?page=forum&id_article=#ID_ARTICLE">
+          [Il y a déjà (#TOTAL_BOUCLE|=={1}|?{<:deja_commenntaire:>,#TOTAL_BOUCLE <:deja_commentaires:>})],
+          rejoignez la conversation.
+        </a>
+      </B_discussion>
+        <a href="/spip.php?page=forum&id_article=#ID_ARTICLE">
+          Réagissez à cet article dans notre page de discussion.
+        </a>
+      <//B_discussion>
+    </div>
+  </div><!-- /.row -->
+
+
 </div>
 </BOUCLE_contenu_article>
