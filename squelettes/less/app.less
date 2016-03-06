@@ -108,6 +108,50 @@ body.sommaire .jumbotron {
   display: block;
 }
 
+.comments {
+  padding-top: 1em;
+  .comment {
+    padding-top: 1em;
+
+    // applies to both .comment-meta and .comment-content
+    & > div {
+       padding-top: 1em;
+    }
+    .comment-meta {
+      // too close to corpus-meta
+      text-align: right;
+      color:#999;
+      .meta-author {
+        .grayLink();
+      }
+      abbr {
+        text-decoration: none;
+        border-bottom: none;
+      }
+    }
+    .comment-content {
+      border-top: 1px solid #ccc;
+    }
+  }
+}
+
+
+.formulaire_forum {
+  label {
+    display: block;
+  }
+  textarea {
+    padding: .5em;
+    width: 97%;
+  }
+
+  fieldset.previsu .previsu-zone {
+    border-left: 10px solid #ccc;
+    padding-left: 20px;
+  }
+}
+
+
 .cloud {
   ul {
     margin:0;

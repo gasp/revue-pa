@@ -24,20 +24,21 @@
       </h1>
 
       <div class="texte">
-        texte succint qui rappelle l'usage du forum
+        texte succinct qui rappelle l'usage du forum
         et qui invite si ça ne l'a pas déjà été fait à
         <a href="#URL_ARTICLE">Lire le résumé de l'article</a>
       </div>
     </div>
   </div>
+
+  [(#REM) Forum de l'article ]
+  <INCLURE{fond=inclure/_forum,id_article} />
+
   <div class="row">
     <div class="col-md-7 col-md-offset-3">
-      [(#REM) Forum de l'article ]
-      <INCLURE{fond=inclure/_forum,id_article} />
       [<h2><:forum:form_pet_message_commentaire:></h2>
       (#FORMULAIRE_FORUM)]
     </div>
-
   </div>
 
 </div>
