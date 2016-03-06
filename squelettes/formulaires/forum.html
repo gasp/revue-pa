@@ -67,62 +67,10 @@ fffffoorrrmmulllaire fooorum
 		<label for='texte'><:forum:forum_texte|typo:> <:info_obligatoire_02:></label>
 		[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{texte})</span>]
 		<textarea name="texte" id="texte" rows="10" cols="60"[(#CONFIG{forums_afficher_barre}|=={non}|oui) class="no_barre"]>[(#ENV{texte})]</textarea>
-        [(#ENV**{config}|table_valeur{afficher_barre}|?{<p class='explication'><:info_creation_paragraphe:></p>,<p class="explication forum_saisie_texte_info"><:forum:forum_saisie_texte_info:></p>})]
-	</li>
+			[(#ENV**{config}|table_valeur{afficher_barre}|?{<p class='explication'><:info_creation_paragraphe:></p>,<p class="explication forum_saisie_texte_info"><:forum:forum_saisie_texte_info:></p>})]
+	</div>
 })]
-	</ul></fieldset>
-
-[(#CONFIG{forums_urlref}|!={non}|?{
-	<ul><li class='fieldset'>
-  <fieldset>
-  	<legend><:forum:forum_lien_hyper:></legend>
-  	<p class='explication'><:forum:forum_page_url:></p>
-  	<ul>
-  	<li class='editer saisie_nom_site[ (#ENV**{erreurs}|table_valeur{nom_site}|oui)erreur]'>
-        <label for="nom_site"><:forum:forum_titre:></label>
-      	[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{nom_site})</span>]
-      	<input type="text" class="text" name="nom_site" id="nom_site" size="40" value="[(#ENV{nom_site})]" />
-    </li>
-  	<li class='editer saisie_url_site[ (#ENV**{erreurs}|table_valeur{url_site}|oui)erreur]'>
-      <label for="url_site"><:forum:forum_lien_hyper:></label>
-    	[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{url_site})</span>]
-    	<input type="text" class="text url" name="url_site" id="url_site" style="text-align: left;" dir="ltr" size="40" value="[(#ENV{url_site})]" autocapitalize="off" autocorrect="off" />
-    </li>
-    </ul>
-  </fieldset>
-  </li>
-  </ul>
-})]
-
-[
-	<fieldset>
-	<legend><:medias:bouton_ajouter_document:></legend>
-	<ul>
-	<li class='editer saisie_document_forum[ (#ENV**{erreurs}|table_valeur{document_forum}|oui)erreur]'>
-		[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{document_forum})</span>]
-		<input type="hidden" name="cle_ajouter_document" value="(#ENV{cle_ajouter_document})" />
-		[<div id="ajouter_document_up">(#ENV{ajouter_document})
-		<label for="supprimer_document_ajoute"><input type='checkbox' name='supprimer_document_ajoute' id='supprimer_document_ajoute' />
-		<:lien_supprimer:></label>
-		</div>]
-		<div>
-		[<label for="ajouter_document">(#ENV{formats_documents_forum}|join{', '})</label>]
-		<input class='file' type="file" name="ajouter_document" id="ajouter_document"[
-		accept="(#ENV{formats_documents_forum}|join{','})"] />
-		</div>
-
-		<script type='text/javascript'>/*<!\[CDATA\[*/
-		if (window.jQuery) jQuery(function(){
-			jQuery('#ajouter_document_up')
-			.next().hide()
-			.prev().find(':checkbox').bind('change', function(){
-				jQuery('#ajouter_document_up').hide().next().show();
-			});
-		});
-		/*\]\]>*/</script>
-	</li>
-	</ul></fieldset>
-]
+	</fieldset>
 
 	[(#REM) Piege a robots spammeurs, dont on change le nom a chaque fois,
 	][<p style="display: none;">
