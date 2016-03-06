@@ -1,0 +1,54 @@
+<BOUCLE_contenu_article(ARTICLES){id_article}>
+<div class="container">
+  <div class="row titraille">
+    <div class="col-md-9 col-md-offset-3">
+    </div>
+  </div>
+  <div class="row corpus">
+    <div class="col-md-3 meta">
+      <p>&nbsp;</p>
+      <p>
+        [Publié en (#DATE|saison)][ (#DATE|annee)]<br>
+        <B_lesauteurs>
+        <a href="#URL_ARTICLE#auteurs">par
+        <BOUCLE_lesauteurs(AUTEURS){id_article}{'et'}>
+          #NOM
+        </BOUCLE_lesauteurs>
+        </a>
+      </p>
+    </div>
+    <div class="col-md-9">
+      <h1 class="#EDIT{titre} surlignable">
+        <div class="small">Discussion:</div>
+        <a href="#URL_ARTICLE">#TITRE</a>
+      </h1>
+
+      <div class="texte">
+        texte succint qui rappelle l'usage du forum
+        et qui invite si ça ne l'a pas déjà été fait à
+        <a href="#URL_ARTICLE">Lire le résumé de l'article</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7 col-md-offset-3">
+      [(#REM) Forum de l'article ]
+      <INCLURE{fond=inclure/_forum,id_article} />
+      [<h2><:forum:form_pet_message_commentaire:></h2>
+      (#FORMULAIRE_FORUM)]
+    </div>
+
+  </div>
+
+<B_mots>
+  <div class="row">
+    <div class="col-md-7 col-md-offset-3">
+      <h3>Mots clefs</h3>
+      <BOUCLE_mots(MOTS){id_article}{id_groupe=4}{", "}>
+      <a href="#URL_MOT">#TITRE</a></BOUCLE_mots>
+    </div>
+  </div><!-- /.row -->
+</B_mots>
+
+</div>
+</BOUCLE_contenu_article>
