@@ -104,10 +104,31 @@ body.sommaire .jumbotron {
   }
 }
 
+// on article-publication page, conversation element
+.row.discussion {
+  .infinite {
+    position: relative;
+    height: 80px;
+    overflow:hidden;
+    .cache{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      // border:1px solid pink;
+      background-position: bottom;
+      background-repeat: repeat-x;
+      background-image: url('../images/infinite-f0-50px.png');
+    }
+  }
+}
+
 .formulaire_ecrire_auteur label {
   display: block;
 }
 
+//
 .comments {
   padding-top: 1em;
   .comment {
