@@ -1,30 +1,20 @@
 <div class="container">
   <div class="row titraille">
-    <div class="col-md-9 col-md-offset-3 simplex">
-      <h1>
-        <div class="small">
-          Résultats de recherche de
-        </div>
-         "#RECHERCHE"
-      </h1>
-      [<div class="texte">
-        (#TEXTE)
-      </div>]
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-9 col-md-offset-3 simplex">
-      <p>
-        Effectuer une autre recherche
-      </p>
+    <div class="col-md-9 col-md-offset-1 simplex">
       <form class="" action="/" method="get">
         <input type="hidden" name="page" value="recherche">
-        <input type="text" name="recherche" value="#RECHERCHE">
-        <input type="submit" name="name" value="Rechercher">
-      </form>
+          <h1 style="margin-bottom: 10px">
+            <div class="small">
+              Résultats de recherche de
+            </div>
+             <input type="text" name="recherche" value="#RECHERCHE"
+             style="width: 100%">
+          </h1>
+          <input type="submit" name="name" value="Lancer une nouvelle recherche"
+          style=""
+          class="btn btn-default">
+        </form>
     </div>
-  </div>
 
   <div class="row">
     <div class="col-md-8 col-md-offset-1 simplex">
