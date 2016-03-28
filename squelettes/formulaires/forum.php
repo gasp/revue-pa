@@ -484,7 +484,13 @@ function formulaires_forum_traiter_dist($objet, $id_objet, $id_forum,
 			else {
 				$thread = sql_fetsel('id_thread', 'spip_forum', 'id_forum=' . $id_reponse);
 				spip_log('id_thread=' . $thread['id_thread'], 'forum');
-				$retour = generer_url_entite($thread['id_thread'], 'forum');
+				//$retour = generer_url_entite($thread['id_thread'], 'forum');
+				// renvoyer à la page d'article
+				//$retour = generer_url_entite($id_objet, 'article');
+
+				// renvoyer à la page de forum avec l'id_article
+				$retour = '/spip.php?page=forum&id_article='.$id_objet.'#forum'.$id_reponse;
+
 			}
 		}
 
