@@ -1,4 +1,14 @@
 <BOUCLE_titre(AUTEURS){id_auteur}>
 <title>[(#NOM|textebrut)] - [(#NOM_SITE_SPIP|textebrut)]</title>
 [<meta name="description" content="(#BIO|couper{150}|textebrut)" />]
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Person",
+  ["image": "(#LOGO_AUTEUR)",]
+  "name": "#NOM",
+}
+</script>
+
 </BOUCLE_titre>
