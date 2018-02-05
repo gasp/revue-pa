@@ -55,11 +55,11 @@
   </div>
   <div class="row auteur">
     <div class="col-md-1 thumbnail col-md-offset-2">
-      [(#LOGO_AUTEUR|image_recadre{200,200}|sinon{'<img src="/squelettes/images/profile.png">'})]
+      [(#LOGO_AUTEUR|image_recadre{200,200})]
     </div>
     <div class="col-md-7">
       <div class="bio">
-        #BIO
+        [(#BIO)]
       </div>
       <BOUCLE_auteur_biographie(AUTEURS){id_auteur}{nom_site=='bio'}>
         <div class="fullbio">
