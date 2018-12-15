@@ -1,0 +1,22 @@
+
+<BOUCLE_ldjson(RUBRIQUES){id_rubrique}>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Periodical",
+  "issn": "977 2271 2151 00",
+  "hasPart": [
+    <BOUCLE_issue(RUBRIQUES){id_parent}{","}>
+      {
+        "@id": "numero-#COMPTEUR_BOUCLE",
+        "@type": "PublicationIssue",
+        ["datePublished": "(#DATE||affdate{'Y-m-d'})",]
+        "issueNumber": "#COMPTEUR_BOUCLE"
+      }
+    </BOUCLE_issue>
+  ],
+  "name": "Revue de psychologie analytique",
+  "publisher": "@RPA"
+}
+</script>
+</BOUCLE_ldjson>
