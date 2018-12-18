@@ -33,11 +33,13 @@
             #INTRODUCTION
           </div>
           <div class="">
-            [(#REM) mot7, mot60, mot148 ne peut etre vendu]
-            <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{!id_mot IN(7, 60, 148)}{0,1}>
+            [(#REM) quand les prix sont zero, on ne vend pas]
+            <BOUCLE_prix(MOTS){id_article}{id_groupe=3}{0,1}>
             #SET{prix, #DESCRIPTIF}
-            [<a href="(#_articles:TITRE|paypal_url{Article #ID_ARTICLE en PDF, #GET{prix}|supprimer_tags|trim})"
-              title="Commander avec Paypal" class="btn btn-default">Commander l'article</a>]
+            [(#GET{prix}|strip_tags|trim|intval|>{0}|oui)
+              [<a href="(#_articles:TITRE|paypal_url{Article #ID_ARTICLE en PDF, #GET{prix}|supprimer_tags|trim})"
+                title="Commander avec Paypal" class="btn btn-default">Commander l'article</a>]
+              ]
             </BOUCLE_prix>
           </div>
           <!--
