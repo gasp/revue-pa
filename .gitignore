@@ -9,6 +9,7 @@ prive/
 squelettes-dist/
 tmp/
 /*.txt
+!/htaccess.txt
 /*.php
 /*.png
 rien.gif
