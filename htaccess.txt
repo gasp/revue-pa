@@ -25,16 +25,10 @@ RewriteEngine On
 RewriteBase /
 
 
-# SPIP version 'php' - si vous avez d'anciennes adresses en '.php[3]',
-# supprimez le '#' sur les lignes qui suivent pour rediriger les acces
-# errones vers le .php correspondant
+RewriteCond %{HTTPS} !=on
+# This checks to make sure the connection is not already HTTPS
 
-#RewriteCond %{REQUEST_FILENAME} -f
-#RewriteRule ^(.+)\.php[3]$ $1.php [QSA,L]
-
-# Fin version
-###
-
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 
 ################ REGLAGES PERSONNALISES ######################
 # Inscrivez ci-dessous vos reglages supplementaires
